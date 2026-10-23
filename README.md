@@ -11,7 +11,7 @@ and only see listings from their own campus.
 ## Run it locally
 
 1. **Create a Supabase project** (free) at https://supabase.com.
-2. **Create the database:** Supabase → SQL Editor → paste all of `supabase/schema.sql` → Run.
+2. **Create the database:** install the [Supabase CLI](https://supabase.com/docs/guides/cli), then run `supabase login`, `supabase link --project-ref YOUR_REF` and `supabase db push`.
 3. **Auth settings:** Supabase → Authentication → URL Configuration:
    - Site URL: `http://localhost:3000`
    - Redirect URLs: add `http://localhost:3000/auth/callback`
@@ -34,7 +34,7 @@ npm run test:watch # re-run tests as you edit
 ```
 
 Tests live next to the code they cover (`*.test.ts`). They also check that the app's campus and category
-config stays in sync with `supabase/schema.sql`. CI runs lint, type-check, tests and build on every pull request.
+config stays in sync with `the SQL in `supabase/migrations/``. CI runs lint, type-check, tests and build on every pull request.
 
 ## Deploy (Vercel)
 
@@ -48,7 +48,7 @@ email sender is heavily rate-limited.
 | Path | What it does |
 |---|---|
 | `src/config/app.ts` | App name, campuses, categories. Rename the product or add a school here. |
-| `supabase/schema.sql` | Tables, row-level security, `.edu` signup guard, photo storage. |
+| `supabase/migrations/` | Versioned database schema: tables, row-level security, `.edu` signup guard, photo storage. |
 | `src/proxy.ts` | Keeps sessions fresh and sends signed-out users to `/login`. |
 | `src/app/page.tsx` | Landing page (signed out) and campus feed with search and category filters. |
 | `src/app/sell/` | Create a listing with photos. |
