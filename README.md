@@ -1,5 +1,7 @@
 # Repo
 
+[![CI](https://github.com/NihithChanapathi/repo-app/actions/workflows/ci.yml/badge.svg)](https://github.com/NihithChanapathi/repo-app/actions/workflows/ci.yml)
+
 A student marketplace for dorm essentials, clothes, parking passes, tickets and subleases.
 Pilot campuses: NC State, UNC Chapel Hill, Duke. Students sign in with a campus `.edu` email
 and only see listings from their own campus.
