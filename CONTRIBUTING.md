@@ -52,6 +52,7 @@ Run these locally. Pull requests are expected to pass all of them:
 ```bash
 npm run lint
 npm run typecheck
+npm test
 npm run build
 ```
 

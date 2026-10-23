@@ -18,6 +18,7 @@
 
 - [ ] `npm run lint` passes
 - [ ] `npm run typecheck` passes
+- [ ] `npm test` passes (add tests for new logic)
 - [ ] `npm run build` passes
 - [ ] No secrets or `.env.local` included
 - [ ] Database or security changes are explained above (or none)
