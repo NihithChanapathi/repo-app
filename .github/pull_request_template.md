@@ -17,7 +17,7 @@
 ## Checklist
 
 - [ ] `npm run lint` passes
-- [ ] `npx tsc --noEmit` passes
+- [ ] `npm run typecheck` passes
 - [ ] `npm run build` passes
 - [ ] No secrets or `.env.local` included
 - [ ] Database or security changes are explained above (or none)
