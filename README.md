@@ -26,6 +26,16 @@ and only see listings from their own campus.
 
    Open http://localhost:3000, sign in with an `@ncsu.edu` address, and post a test listing.
 
+## Testing
+
+```bash
+npm test           # run all unit tests once
+npm run test:watch # re-run tests as you edit
+```
+
+Tests live next to the code they cover (`*.test.ts`). They also check that the app's campus and category
+config stays in sync with `supabase/schema.sql`. CI runs lint, type-check, tests and build on every pull request.
+
 ## Deploy (Vercel)
 
 Push to GitHub, import the repo in Vercel, add the same two env vars, and deploy. Then add your

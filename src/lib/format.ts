@@ -12,12 +12,12 @@ export function timeAgo(iso: string) {
   const h = Math.floor(m / 60);
   if (h < 24) return `${h}h ago`;
   const d = Math.floor(h / 24);
-  return d < 30 ? `${d}d ago` : new Date(iso).toLocaleDateString();
+  return d < 30 ? `${d}d ago` : new Date(iso).toLocaleDateString("en-US");
 }
 
 export function formatDate(d: string | null) {
   if (!d) return "";
-  return new Date(d + "T00:00:00").toLocaleDateString(undefined, {
+  return new Date(d + "T00:00:00").toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
