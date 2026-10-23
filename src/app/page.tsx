@@ -128,7 +128,7 @@ function SetupNotice() {
       <h1 className="text-lg font-bold">Almost there: connect Supabase</h1>
       <ol className="mt-3 list-decimal space-y-1 pl-5">
         <li>Create a free project at supabase.com.</li>
-        <li>Run <code>supabase/schema.sql</code> in the SQL Editor.</li>
+        <li>Run <code>supabase db push</code> to apply the database migrations.</li>
         <li>Copy <code>.env.example</code> to <code>.env.local</code> and fill in the URL and anon key.</li>
         <li>Restart <code>npm run dev</code>.</li>
       </ol>

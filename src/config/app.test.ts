@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { CAMPUSES, CATEGORIES, campusForEmail, categoryLabel } from "./app";
@@ -46,12 +46,12 @@ describe("categoryLabel", () => {
 });
 
 describe("config stays consistent with the database schema", () => {
-  const sql = readFileSync(resolve(process.cwd(), "supabase/schema.sql"), "utf8");
+  const sql = readdirSync(resolve(process.cwd(), "supabase/migrations")).filter((f) => f.endsWith(".sql")).sort().map((f) => readFileSync(resolve(process.cwd(), "supabase/migrations", f), "utf8")).join("\n");
 
   it("every campus in the app is seeded in the database", () => {
     for (const campus of CAMPUSES) {
       const seedLine = sql.split("\n").find((line) => line.includes(`'${campus.id}'`) && line.includes(`'${campus.domain}'`));
-      expect(seedLine, `schema.sql is missing campus ${campus.id}`).toBeDefined();
+      expect(seedLine, `migrations are missing campus ${campus.id}`).toBeDefined();
     }
   });
 
